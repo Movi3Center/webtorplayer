@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Wretched (2019)</title>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="ie=edge" http-equiv="x-ua-compatible">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+        }
+        #player {
+            height: 100%;
+        }
+        #controls {
+            padding: 1rem;
+        }
+        #controls i {
+            padding-top: 0.3rem;
+            display: block;
+        }
+        .control {
+            padding-right: 1rem;
+        }
+        #files {
+            padding: 0.5rem;
+        }
+        #files a {
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="player"></div>
+    <div id="files"></div> 
+   <script>
+        window.webtor = window.webtor || [];
+        window.webtor.push({
+            id: 'player',
+			width: '100%',
+            height: '100%',
+			features: {
+                title:       true,
+                p2pProgress: true,
+                subtitles:   true,
+                settings:    false,
+                fullscreen:  true,
+                playpause:   true,
+                currentTime: true,
+                timeline:    true,
+                duration:    true,
+                volume:      true,
+                chromecast:  true,
+				browse:      false,
+                download:    false,
+            },
+            magnet: 'magnet:?xt=urn:btih:a9300fde6898cfd8c9ae94d2291b12aa7c02144e&dn=The.Wretched.2019.1080p.BluRay.H264.AAC-RARBG&tr=http%3A%2F%2Ftracker.trackerfix.com%3A80%2Fannounce&tr=udp%3A%2F%2F9.rarbg.me%3A2780&tr=udp%3A%2F%2F9.rarbg.to%3A2980',
+            on: function(e) {
+                if (e.name == window.webtor.TORRENT_FETCHED) {
+                    console.log('Torrent fetched!', e.data);
+                }
+                if (e.name == window.webtor.TORRENT_ERROR) {
+                    console.log('Torrent error!');
+                }
+            },
+			title: 'The Wretched (2019)',
+            poster: 'https://www.themoviedb.org/t/p/original/su0huGwZfAmzPvUjnlG42LO9GFl.jpg',
+            subtitles: [
+                {
+                    srclang: 'pt',
+                    label: 'Português',
+                    src: 'https://dl.dropboxusercontent.com/s/558i0ki5ohvhhrr/The.Wretched.2019.BluRay.srt',
+                }
+            ],
+            lang: 'en',
+            i18n: {
+                en: {
+                    common: {
+                        "prepare to play": "Preparing Video Stream... Please Wait...",
+                    },
+                    stat: {
+                        "seeding": "Seeding",
+                        "waiting": "Client initialization",
+                        "waiting for peers": "Waiting for peers",
+                        "from": "from",
+                    },
+                },
+            },
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@webtor/player-sdk-js/dist/index.min.js"></script>
+</body>
+</html>
